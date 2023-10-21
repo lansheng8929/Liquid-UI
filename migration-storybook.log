@@ -1,0 +1,83 @@
+🔎 checking possible migrations..
+
+🔎 found a 'github-flavored-markdown-mdx' migration:
+╭ Automigration detected ──────────────────────────────────────────────────────╮
+│                                                                              │
+│   In MDX1 you had the option of using GitHub flavored markdown.              │
+│                                                                              │
+│   Storybook 7.0 uses MDX2 for compiling MDX, and thus no longer supports     │
+│   GFM out of the box.                                                        │
+│   Because of this you need to explicitly add the GFM plugin in the           │
+│   addon-docs options:                                                        │
+│   https://storybook.js.org/docs/react/writing-docs/mdx#lack-of-github-flav   │
+│   ored-markdown-gfm                                                          │
+│                                                                              │
+│   We recommend you follow the guide on the link above, however we can add    │
+│   a temporary storybook addon that helps make this migration easier.         │
+│   We'll install the addon and add it to your storybook config.               │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+? Do you want to run the 'github-flavored-markdown-mdx' migration on your project? › (Y/n)✔ Do you want to run the 'github-flavored-markdown-mdx' migration on your project? … yes
+
+An error occurred while installing dependencies:
+NPM error EACCES - Permission issue.
+
+Please check the logfile generated at ./storybook.log for troubleshooting and try again.
+❌ error when running github-flavored-markdown-mdx migration
+HandledError: NPM error EACCES - Permission issue.
+
+Please check the logfile generated at ./storybook.log for troubleshooting and try again.
+    at NPMProxy.addDependencies (/Users/zhangjialiang/My Project/lanui/node_modules/@storybook/cli/dist/generate.js:55:75)
+    at async Object.run (/Users/zhangjialiang/My Project/lanui/node_modules/@storybook/cli/dist/generate.js:183:231)
+    ... 4 lines matching cause stack trace ...
+    at async upgrade (/Users/zhangjialiang/My Project/lanui/node_modules/@storybook/cli/dist/generate.js:433:3981) {
+  handled: true,
+  cause: Error: NPM error EACCES - Permission issue.
+  
+  Please check the logfile generated at ./storybook.log for troubleshooting and try again.
+      at NPMProxy.runAddDeps (/Users/zhangjialiang/My Project/lanui/node_modules/@storybook/cli/dist/generate.js:57:7676)
+      at async NPMProxy.addDependencies (/Users/zhangjialiang/My Project/lanui/node_modules/@storybook/cli/dist/generate.js:54:853)
+      at async Object.run (/Users/zhangjialiang/My Project/lanui/node_modules/@storybook/cli/dist/generate.js:183:231)
+      at async runFixes (/Users/zhangjialiang/My Project/lanui/node_modules/@storybook/cli/dist/generate.js:406:1144)
+      at async automigrate (/Users/zhangjialiang/My Project/lanui/node_modules/@storybook/cli/dist/generate.js:401:676)
+      at async doUpgrade (/Users/zhangjialiang/My Project/lanui/node_modules/@storybook/cli/dist/generate.js:433:3535)
+      at async withTelemetry (/Users/zhangjialiang/My Project/lanui/node_modules/@storybook/core-server/dist/index.js:103:3903)
+      at async upgrade (/Users/zhangjialiang/My Project/lanui/node_modules/@storybook/cli/dist/generate.js:433:3981)
+}
+
+
+╭ Migration check ran with failures ───────────────────────────────────────────╮
+│                                                                              │
+│   Failed migrations:                                                         │
+│                                                                              │
+│   github-flavored-markdown-mdx:                                              │
+│   NPM error EACCES - Permission issue.                                       │
+│                                                                              │
+│   Please check the logfile generated at ./storybook.log for                  │
+│   troubleshooting and try again.                                             │
+│                                                                              │
+│   You can find the full logs in /Users/zhangjialiang/My                      │
+│   Project/lanui/migration-storybook.log                                      │
+│                                                                              │
+│   ─────────────────────────────────────────────────                          │
+│                                                                              │
+│   If you'd like to run the migrations again, you can do so by running 'npx   │
+│   storybook@next automigrate'                                                │
+│                                                                              │
+│   The automigrations try to migrate common patterns in your project, but     │
+│   might not contain everything needed to migrate to the latest version of    │
+│   Storybook.                                                                 │
+│                                                                              │
+│   Please check the changelog and migration guide for manual migrations and   │
+│   more information: https://storybook.js.org/migration-guides/7.0            │
+│   And reach out on Discord if you need help: https://discord.gg/storybook    │
+│                                                                              │
+│   ─────────────────────────────────────────────────                          │
+│                                                                              │
+│   You can find more information for a given dependency by running npm ls     │
+│   --depth=1 <package-name>                                                   │
+│                                                                              │
+│   Please try de-duplicating these dependencies by running npm dedupe         │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+

@@ -1,0 +1,28 @@
+.storybook-button {
+  font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  border: 0;
+  border-radius: 3em;
+  cursor: pointer;
+  display: inline-block;
+  line-height: 1;
+  padding: 10px;
+  color: white;
+}
+
+.storybook-gradient {
+  width: 200%;
+  height: 200%;
+  border: 1px solid black;
+
+  /* background: linear-gradient(126.95deg, #000000 0%, #f9ffb1 100%),
+    radial-gradient(91.23% 100% at 50% 100%, #be002e 0%, #6100ff 100%),
+    linear-gradient(307.27deg, #1dac92 0.37%, #2800c6 100%),
+    radial-gradient(
+      100% 140% at 100% 0%,
+      #eaff6b 0%,
+      #006c7a 57.29%,
+      #2200aa 100%
+    );
+  background-blend-mode: overlay, difference, difference, normal; */
+}
