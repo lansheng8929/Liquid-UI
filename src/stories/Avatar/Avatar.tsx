@@ -1,13 +1,13 @@
 import React, { useRef } from "react"
-import "./button.css"
+import "./avatar.css"
 import ReactDOM from "react-dom"
 
 interface ButtonProps {
   className?: string
   style?: Record<string, string>
-  isDev?: boolean
+  src?: string
   variants?: "Primary" | "Secondary"
-  label: string
+  isDev?: boolean
   onClick?: () => void
 }
 
@@ -56,12 +56,26 @@ const gradientTheme = [
   // },
 ]
 
-export const Button = ({
+const noSrcDom = (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="32"
+    height="32"
+    viewBox="0 0 24 24"
+  >
+    <path
+      fill="currentColor"
+      d="M12 12q-1.65 0-2.825-1.175T8 8q0-1.65 1.175-2.825T12 4q1.65 0 2.825 1.175T16 8q0 1.65-1.175 2.825T12 12Zm-8 8v-2.8q0-.85.438-1.563T5.6 14.55q1.55-.775 3.15-1.163T12 13q1.65 0 3.25.388t3.15 1.162q.725.375 1.163 1.088T20 17.2V20H4Z"
+    />
+  </svg>
+)
+
+export const Avatar = ({
   className = "",
-  label,
-  isDev = false,
-  variants = "Primary",
   style = {},
+  src,
+  variants = "Primary",
+  isDev = false,
   ...props
 }: ButtonProps) => {
   const [isHover, setIsHover] = React.useState(false)
@@ -115,6 +129,7 @@ export const Button = ({
       case "Primary":
         return {
           ...pubilcStyle,
+
           boxShadow: `0 0 #0000, 0 0 #0000, 0 10px 15px -3px rgb(${shadowColor},0.4),0 4px 6px -4px rgb(${shadowColor},0.4)`,
           animation: "10s moiveAnimation infinite",
         }
@@ -153,9 +168,8 @@ export const Button = ({
   }, [])
 
   return (
-    <button
-      type="button"
-      className={`storybook-button ${className}`}
+    <div
+      className={`storybook-avatar ${className}`}
       style={{
         ...variantsStyle(),
         ...style,
@@ -164,7 +178,7 @@ export const Button = ({
       onMouseLeave={() => setIsHover(false)}
       {...props}
     >
-      {label}
+      {src ? <img src={src} alt="" /> : noSrcDom}
 
       {isDev && (
         <div
@@ -184,6 +198,6 @@ export const Button = ({
           {showColor()}
         </div>
       )}
-    </button>
+    </div>
   )
 }
